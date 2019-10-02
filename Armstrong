@@ -1,0 +1,32 @@
+import java.util.*;
+
+class Armstrong
+{
+    public static void main (String []args)
+    {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("enter a number");
+        int n1 = sc.nextInt();
+        int temp = n1;
+        int n = temp;
+        // int temp =n1;
+        int rem=0,c=0,count=0;
+
+        while(n1 != 0)
+        {
+            n1=n1/10;
+            ++count;
+        }
+
+        while(n>0)
+        {
+            rem=n%10;
+            n=n/10;
+            c=c+(int)Math.pow(rem,count);
+        }
+        if(temp==c)
+        System.out.println("entered number is Armstrong");
+        else
+        System.out.println("entered number is not Armstrong");
+    }
+}
