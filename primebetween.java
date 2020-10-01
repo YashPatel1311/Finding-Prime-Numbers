@@ -1,64 +1,37 @@
 import java.util.*;
 
-class primebetween{
+class primebetween {
 
-public static void main(String[]args){
+    public static void main(String[] args) {
 
-    int flag=0;
+        int flag = 0;
 
-    System.out.println("Enter any number two number: ");	
-	Scanner sc=new Scanner(System.in);
+        System.out.println("Enter any number two number: ");
+        Scanner sc = new Scanner(System.in);
 
-    int a = sc.nextInt();
-    int b = sc.nextInt();
+        int a = sc.nextInt();
+        int b = sc.nextInt();
 
-    System.out.println();
+        System.out.println();
 
-    if(a<2)
-    {
-        System.out.println("2,");
-    }
+        int max = Math.max(a, b);
+        int min = Math.min(a, b);
+        System.out.println("All prime Number between "+ min + " and " + max);
+        
 
-    if((a+1)%2!=0)
-{ 
-    
-    for(int i=a+1;i<b;i=i+2){
+        for (int k = min; k <= max; k++) {
 
-        flag=0;
+            flag = 0;
 
-
-        int root=(int)Math.sqrt(i);
-
-        for(int j=2;j<=root;j++){
-            if(i%j==0)
-            flag=1;
-            
-        }
-
-        if(flag==0)
-        System.out.println(i+", ");
-
-    }
-}
-
-    else{
-
-        for(int i=a+2;i<b;i=i+2){
-
-            flag=0;
-
-            int root=(int)Math.sqrt(i);
-
-            for(int j=2;j<=root;j++){
-                if(i%j==0)
-                flag=1;            
+            for (int i = 2; i <= (int) Math.sqrt(k); i++) {
+                if (k % i == 0) {
+                    flag = 1;
+                    break;
+                }
             }
-
-            if(flag==0)
-	System.out.println(i+", ");
-
+            if (flag == 0) {
+                System.out.print(k + " ");
+            }
         }
-    
     }
-}
 }
